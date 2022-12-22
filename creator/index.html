@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <style>
     body {
-      background-color: lavender;
+      background-color: white;
       font-size: large;
       margin: 50px;
     }
@@ -120,9 +120,6 @@
 
     let plainText = new Uint8Array()
     let fileExtension = ""
-    // TODO move this messy stuff out of encrypt path
-    // TODO handle files with no extension (currently captures full filename as extension)
-    // TODO file and image are identical except for input field
     if (selectedInputType == '') {
       throw new Error(`Select input type (message, file, image)`)
     } else if (selectedInputType == 'message') {
@@ -297,10 +294,9 @@
   </script>
 </head>
 <body onload="init()">
-  <h1><a href="https://mprimi.github.io/portable-secret/">Portable Secret</a>: Secret Creator</h1>
+  <h1>Secret Encrypted Creator</h1>
   <p>
     This tool runs entirely in your browser window. <strong>The secret never leaves your computer!</strong><br>
-    But don't take my word for it. Check out the <a href="https://github.com/mprimi/portable-secret/tree/main/creator" target="_blank">source code</a>!
   </p>
 
   <!-- Inputs -->
@@ -320,14 +316,13 @@
 
   <div>
     Password:<br>
-    <input type="text" id="password" value="banana" required>
+    <input type="text" id="password" value="Delete & Put Your Password Here" required>
   </div>
 
 
   <div>
     Password hint:<br>
-    <textarea rows="8" cols="80" id="password_hint" required>A yellow elongated fruit (technically a berry!)
-6 letters, all lowercase.</textarea>
+    <textarea rows="8" cols="80" id="password_hint" required>Delete & Put Your Password Hint Here</textarea>
   </div>
 
   <!-- Radio selector for type of secret -->
